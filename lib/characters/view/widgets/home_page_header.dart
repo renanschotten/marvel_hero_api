@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marvel_hero_api/shared/colors/app_colors.dart';
-import 'package:marvel_hero_api/shared/colors/app_text_styles.dart';
+import 'package:marvel_hero_api/shared/text_styles/app_text_styles.dart';
 
 class HomePageHeader extends StatelessWidget {
   const HomePageHeader({

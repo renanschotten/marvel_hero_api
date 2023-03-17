@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel_hero_api/characters/view/bloc/characters_bloc.dart';
 import 'package:marvel_hero_api/characters/view/widgets/custom_list_tile.dart';
 import 'package:marvel_hero_api/shared/colors/app_colors.dart';
-import 'package:marvel_hero_api/shared/colors/app_text_styles.dart';
+import 'package:marvel_hero_api/shared/text_styles/app_text_styles.dart';
 
 class MainContentWidget extends StatelessWidget {
   const MainContentWidget({
