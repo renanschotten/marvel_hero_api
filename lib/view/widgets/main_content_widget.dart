@@ -50,20 +50,19 @@ class MainContentWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 400, // listTileHeight * 4,
+                    height: listTileHeight * 4,
                     child: PageView.builder(
                       physics: NeverScrollableScrollPhysics(),
                       controller: pageController,
                       itemCount: state.characters.length,
-                      itemBuilder: (context, index) {
+                      itemBuilder: (context, pvIndex) {
                         return ListView.builder(
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
-                          itemCount: state.characters[index].length,
-                          itemBuilder: (context, index) => SizedBox(
-                            //height: listTileHeight,
+                          itemCount: state.characters[pvIndex].length,
+                          itemBuilder: (context, lvIndex) => SizedBox(
                             child: CustomListTile(
-                              character: state.characters[currentPage][index],
+                              character: state.characters[pvIndex][lvIndex],
                             ),
                           ),
                         );

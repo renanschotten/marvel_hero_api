@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:marvel_hero_api/bloc/characters_bloc.dart';
-import 'package:marvel_hero_api/di.dart';
+import 'package:marvel_hero_api/view/pages/details_screen.dart';
 import 'package:marvel_hero_api/view/pages/home_page.dart';
 
 import 'di.dart' as di;
@@ -20,10 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Marvel Hero Api',
-      home: BlocProvider(
-        create: (context) => getIt<CharactersBloc>(),
-        child: HomePage(),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/details': (context) => DetailsPage(),
+      },
     );
   }
 }

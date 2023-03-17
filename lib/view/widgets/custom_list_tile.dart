@@ -14,6 +14,9 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () {
+        Navigator.pushNamed(context, '/details', arguments: character);
+      },
       contentPadding: EdgeInsets.symmetric(
         vertical: 18,
         horizontal: 16,

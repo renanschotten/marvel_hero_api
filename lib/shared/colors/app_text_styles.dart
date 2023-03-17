@@ -49,4 +49,28 @@ class AppTextStyles {
     fontSize: 16,
     height: 1.2,
   );
+
+  static const TextStyle redRobotoBlack32 = TextStyle(
+    color: AppColors.red,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w900,
+    fontSize: 32,
+    height: 1.2,
+  );
+
+  static const TextStyle greyRobotoRegular16 = TextStyle(
+    color: AppColors.grey,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+    height: 1.2,
+  );
+
+  static const TextStyle redRobotoBold20 = TextStyle(
+    color: AppColors.red,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w700,
+    fontSize: 20,
+    height: 1.2,
+  );
 }
