@@ -1,16 +1,24 @@
 # marvel_hero_api
 
-A new Flutter project.
+Flutter project build using Marvel's Hero API
 
-## Getting Started
+This project was build using the packages:
 
-This project is a starting point for a Flutter application.
+- http;
+- dartz;
+- flutter_bloc;
+- get_it;
 
-A few resources to get you started if this is your first Flutter project:
+# Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Initial Page](./screenshots/initial_page.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Loading Page](./screenshots/loading_page.png)
+
+![Results Page 1](./screenshots/results_page_1.png)
+
+![Results Page 2](./screenshots/results_page_2.png)
+
+![Filter Results](./screenshots/filter_results.png)
+
+![Details Page](./screenshots/details_page.png)
