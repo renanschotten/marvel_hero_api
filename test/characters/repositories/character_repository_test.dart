@@ -1,23 +1,3 @@
-/* import 'package:dartz/dartz.dart';
-import 'package:marvel_hero_api/characters/datasources/character_datasource.dart';
-import 'package:marvel_hero_api/characters/models/character.dart';
-
-abstract class CharacterRepository {
-  Future<Either<String, List<Character>>> fetchCharacters();
-}
-
-class CharacterRepositoryImpl implements CharacterRepository {
-  CharacterRepositoryImpl({required this.datasource});
-
-  final CharacterDatasource datasource;
-
-  @override
-  Future<Either<String, List<Character>>> fetchCharacters() async {
-    return await datasource.fetchCharacters();
-  }
-}
- */
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:marvel_hero_api/characters/datasources/character_datasource.dart';
