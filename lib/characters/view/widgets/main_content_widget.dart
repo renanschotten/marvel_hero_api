@@ -20,71 +20,87 @@ class MainContentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        BlocBuilder(
-          bloc: bloc,
-          builder: (context, state) {
-            if (state is CharactersFailure) {
-              return Center(
-                child: Text(state.message),
-              );
-            } else if (state is CharactersLoading) {
-              return Center(
-                child: CircularProgressIndicator(color: AppColors.red),
-              );
-            } else if (state is CharactersSuccess) {
-              return ListView(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                children: [
-                  Container(
-                    height: 37,
-                    width: double.infinity,
-                    color: AppColors.red,
-                    child: Center(
-                      child: Text(
-                        'Nome',
-                        style: AppTextStyles.whiteRobotoRegular16,
-                      ),
-                    ),
+    return BlocBuilder(
+      bloc: bloc,
+      builder: (context, state) {
+        if (state is CharactersFailure) {
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Text(
+                  state.message,
+                  style: AppTextStyles.greyRobotoRegular21,
+                ),
+                SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    bloc.add(FetchCharacters());
+                  },
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: AppColors.red),
+                  child: Text(
+                    'Tentar Novamente',
+                    style: AppTextStyles.whiteRobotoRegular16,
                   ),
-                  SizedBox(
-                    height: listTileHeight * 4,
-                    child: PageView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      controller: pageController,
-                      itemCount: state.characters.length,
-                      itemBuilder: (context, pvIndex) {
-                        return ListView.builder(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: state.characters[pvIndex].length,
-                          itemBuilder: (context, lvIndex) => SizedBox(
-                            child: CustomListTile(
-                              character: state.characters[pvIndex][lvIndex],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              );
-            }
-            return ElevatedButton(
-              onPressed: () {
-                bloc.add(FetchCharacters());
-              },
-              style: ElevatedButton.styleFrom(backgroundColor: AppColors.red),
-              child: Text(
-                'Buscar',
-                style: AppTextStyles.whiteRobotoRegular16,
+                ),
+              ],
+            ),
+          );
+        } else if (state is CharactersLoading) {
+          return Center(
+            child: CircularProgressIndicator(color: AppColors.red),
+          );
+        } else if (state is CharactersSuccess) {
+          return ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              Container(
+                height: 37,
+                width: double.infinity,
+                color: AppColors.red,
+                padding: EdgeInsets.only(left: 58 + 18),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Nome',
+                  style: AppTextStyles.whiteRobotoRegular16,
+                ),
               ),
-            );
+              SizedBox(
+                height: listTileHeight * 4,
+                child: PageView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  controller: pageController,
+                  itemCount: state.characters.length,
+                  itemBuilder: (context, pvIndex) {
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: state.characters[pvIndex].length,
+                      itemBuilder: (context, lvIndex) => SizedBox(
+                        child: CustomListTile(
+                          character: state.characters[pvIndex][lvIndex],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          );
+        }
+        return ElevatedButton(
+          onPressed: () {
+            bloc.add(FetchCharacters());
           },
-        ),
-      ],
+          style: ElevatedButton.styleFrom(backgroundColor: AppColors.red),
+          child: Text(
+            'Buscar',
+            style: AppTextStyles.whiteRobotoRegular16,
+          ),
+        );
+      },
     );
   }
 }
