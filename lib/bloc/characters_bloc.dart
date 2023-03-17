@@ -11,14 +11,17 @@ part 'characters_state.dart';
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   final CharactersService service;
   late List<Character> characterList;
-  CharactersBloc({required this.service}) : super(CharactersLoading()) {
+  late int totalPages;
+  CharactersBloc({required this.service}) : super(CharactersInitial()) {
     on<FetchCharacters>((event, emit) async {
+      emit(CharactersLoading());
       final response = await service.fetchCharacters();
       response.fold(
         (l) => emit(CharactersFailure(message: l)),
         (r) {
           characterList = r;
           List<List<Character>> chunkedList = r.slices(4).toList();
+          totalPages = chunkedList.length;
           emit(CharactersSuccess(characters: chunkedList));
         },
       );
@@ -38,6 +41,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       }
       List<List<Character>> chunkedList =
           filteredCharacterList.slices(4).toList();
+      totalPages = chunkedList.length;
       emit(CharactersSuccess(characters: chunkedList));
     });
   }
