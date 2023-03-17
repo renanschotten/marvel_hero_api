@@ -8,7 +8,7 @@ class CharactersInitial extends CharactersState {}
 class CharactersLoading extends CharactersState {}
 
 class CharactersSuccess extends CharactersState {
-  final List<Character> characters;
+  final List<List<Character>> characters;
 
   CharactersSuccess({required this.characters});
 }
