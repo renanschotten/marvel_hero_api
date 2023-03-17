@@ -2,9 +2,8 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
-
-import 'package:marvel_hero_api/datasources/constants.dart';
-import 'package:marvel_hero_api/models/character.dart';
+import 'package:marvel_hero_api/characters/datasources/constants.dart';
+import 'package:marvel_hero_api/characters/models/character.dart';
 
 abstract class CharacterDatasource {
   Future<Either<String, List<Character>>> fetchCharacters();

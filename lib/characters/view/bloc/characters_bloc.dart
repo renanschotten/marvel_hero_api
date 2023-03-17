@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:collection/collection.dart';
-
-import 'package:marvel_hero_api/models/character.dart';
-import 'package:marvel_hero_api/services/fetch_characters.dart';
+import 'package:marvel_hero_api/characters/models/character.dart';
+import 'package:marvel_hero_api/characters/services/fetch_characters.dart';
 
 part 'characters_event.dart';
 part 'characters_state.dart';

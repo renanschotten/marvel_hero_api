@@ -1,5 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:marvel_hero_api/models/thumbnail.dart';
+import 'package:marvel_hero_api/characters/models/thumbnail.dart';
 
 class Character {
   final int id;

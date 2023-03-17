@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marvel_hero_api/models/character.dart';
+import 'package:marvel_hero_api/characters/models/character.dart';
 import 'package:marvel_hero_api/shared/colors/app_colors.dart';
 import 'package:marvel_hero_api/shared/colors/app_text_styles.dart';
 

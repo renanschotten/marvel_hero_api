@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:marvel_hero_api/bloc/characters_bloc.dart';
+import 'package:marvel_hero_api/characters/view/bloc/characters_bloc.dart';
+import 'package:marvel_hero_api/characters/view/widgets/bottom_navigator.dart';
+import 'package:marvel_hero_api/characters/view/widgets/home_page_header.dart';
+import 'package:marvel_hero_api/characters/view/widgets/main_content_widget.dart';
 import 'package:marvel_hero_api/di.dart';
-import 'package:marvel_hero_api/view/widgets/bottom_navigator.dart';
-import 'package:marvel_hero_api/view/widgets/home_page_header.dart';
-import 'package:marvel_hero_api/view/widgets/main_content_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

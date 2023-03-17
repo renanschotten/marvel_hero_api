@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:marvel_hero_api/view/pages/details_screen.dart';
-import 'package:marvel_hero_api/view/pages/home_page.dart';
+import 'package:marvel_hero_api/characters/view/pages/details_screen.dart';
+import 'package:marvel_hero_api/characters/view/pages/home_page.dart';
 
 import 'di.dart' as di;
 

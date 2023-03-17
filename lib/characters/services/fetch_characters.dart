@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
-
-import 'package:marvel_hero_api/models/character.dart';
-import 'package:marvel_hero_api/repositories/character_repository.dart';
+import 'package:marvel_hero_api/characters/models/character.dart';
+import 'package:marvel_hero_api/characters/repositories/character_repository.dart';
 
 class CharactersService {
   final CharacterRepository repository;
