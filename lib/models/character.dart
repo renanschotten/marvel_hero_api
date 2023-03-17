@@ -4,7 +4,7 @@ class Character {
   final int id;
   final String name;
   final String description;
-  final Thumbnail? thumbnail;
+  final Thumbnail thumbnail;
 
   Character({
     required this.id,
@@ -18,8 +18,7 @@ class Character {
       id: map['id'],
       name: map['name'],
       description: map['description'],
-      thumbnail:
-          map['thumbnail'] is Map ? Thumbnail.fromMap(map['thumbnail']) : null,
+      thumbnail: Thumbnail.fromMap(map['thumbnail']),
     );
   }
 }
