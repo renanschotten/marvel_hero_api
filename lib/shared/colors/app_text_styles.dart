@@ -34,7 +34,15 @@ class AppTextStyles {
     height: 1.1,
   );
 
-  static const TextStyle whiteRobotoLight16 = TextStyle(
+  static const TextStyle whiteRobotoRegular16 = TextStyle(
+    color: AppColors.white,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w400,
+    fontSize: 16,
+    height: 1.2,
+  );
+
+  static const TextStyle redRobotoRegular16 = TextStyle(
     color: AppColors.red,
     fontFamily: 'Roboto',
     fontWeight: FontWeight.w400,
